@@ -5,13 +5,13 @@
 
 #videocontainer {
     position: relative;
-    width:auto;
+    width: auto;
     height: auto;
     padding: 10px;
     border: 2px solid black;
 }
 
-#myVideo{
+#myVideo {
     position: relative;
     top: 0;
     left: 0;
@@ -50,5 +50,9 @@
 }
 
 .timefeedback {
-    display:inline-block;
+    display: inline-block;
+}
+
+.gonpoint {
+    cursor: move;
 }
