@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gonio</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+
+    <div id="message"></div>
+    <button onclick="stepBack()" type="button">Step Back</button>
+    <button onclick="stepForward()" type="button">Step Forward</button><br>
+    <input id="vidloader" type="file" accept="video/*" />
+
+    <video id="myVideo">
+        <source src="" type="video/*">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <p class="timefeedback" id="timestamp">
+        0
+    </p>
+    <p class="timefeedback">
+        /
+    </p>
+    <p class="timefeedback" id="maxtime">
+        0
+    </p>
+
+    <script src="video_tools.js"></script>
+</body>
+
+</html>

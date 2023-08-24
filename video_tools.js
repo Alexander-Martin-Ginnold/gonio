@@ -1,0 +1,36 @@
+let vid = document.getElementById("myVideo");
+
+function getCurTime() {
+    alert(vid.currentTime);
+}
+
+function setCurTime() {
+    vid.currentTime = 5;
+}
+
+function stepBack() {
+    vid.currentTime = vid.currentTime - 0.1;
+    updateTimestamp();
+} 
+
+function stepForward() {
+    vid.currentTime = vid.currentTime + 0.1;
+    updateTimestamp();
+}
+
+function updateTimestamp() {
+    document.getElementById("timestamp").innerHTML =  Math.round(vid.currentTime*100)/100;
+    document.getElementById("maxtime").innerHTML =  vid.duration;
+}
+
+function loadVideo(event) {
+    var file = this.files[0];
+    var type = file.type;
+    vid = document.getElementById("myVideo");
+    var fileURL = URL.createObjectURL(file);
+    vid.src = fileURL;
+    updateTimestamp();
+}
+
+var vidInput = document.getElementById('vidloader');
+vidInput.addEventListener('change', loadVideo, false);

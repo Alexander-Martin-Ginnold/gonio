@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+video {
+    width: 80%;
+}
+
+.timefeedback {
+    display:inline-block;
+}
