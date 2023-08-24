@@ -9,18 +9,18 @@ function setCurTime() {
 }
 
 function stepBack() {
-    vid.currentTime = vid.currentTime - 0.1;
+    vid.currentTime = Math.round((vid.currentTime - 0.1)*10)/10;
     updateTimestamp();
 } 
 
 function stepForward() {
-    vid.currentTime = vid.currentTime + 0.1;
+    vid.currentTime = Math.round((vid.currentTime + 0.1)*10)/10;
     updateTimestamp();
 }
 
 function updateTimestamp() {
-    document.getElementById("timestamp").innerHTML =  Math.round(vid.currentTime*100)/100;
-    document.getElementById("maxtime").innerHTML =  vid.duration;
+    document.getElementById("timestamp").innerHTML =  Math.round(vid.currentTime*10)/10;
+    document.getElementById("maxtime").innerHTML =  Math.round(vid.duration*10)/10;
 }
 
 function loadVideo(event) {
