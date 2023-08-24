@@ -30,10 +30,27 @@ function goniometerPointInit(evt){
             var coord = getMousePosition(evt);
             selectedElement.setAttributeNS(null, "x", coord.x - offset.x);
             selectedElement.setAttributeNS(null, "y", coord.y - offset.y);
+            redrawLines(evt);
           }
     }
     function endDrag(evt) {  
         selectedElement = null;
+    }
+
+    function redrawLines(evt) {
+        var line1 = document.getElementById("initialline")
+        var line2 = document.getElementById("finalline")
+        var pt1 = document.getElementById("vertinitial")
+        var pivot = document.getElementById("pivot")
+        var pt2 = document.getElementById("vertfinal")
+        line1.setAttributeNS(null, "x1", parseFloat(pt1.getAttributeNS(null, "x"))+5)
+        line1.setAttributeNS(null, "y1", parseFloat(pt1.getAttributeNS(null, "y"))+5)
+        line1.setAttributeNS(null, "x2", parseFloat(pivot.getAttributeNS(null, "x"))+5)
+        line1.setAttributeNS(null, "y2", parseFloat(pivot.getAttributeNS(null, "y"))+5)
+        line2.setAttributeNS(null, "x2", parseFloat(pivot.getAttributeNS(null, "x"))+5)
+        line2.setAttributeNS(null, "y2", parseFloat(pivot.getAttributeNS(null, "y"))+5)
+        line2.setAttributeNS(null, "x1", parseFloat(pt2.getAttributeNS(null, "x"))+5)
+        line2.setAttributeNS(null, "y1", parseFloat(pt2.getAttributeNS(null, "y"))+5)
     }
 
     function getMousePosition(evt) {
