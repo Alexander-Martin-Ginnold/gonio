@@ -13,6 +13,10 @@
     <div id="message"></div>
     <button onclick="stepBack()" type="button">Step Back</button>
     <button onclick="stepForward()" type="button">Step Forward</button><br>
+    <input type="radio" onclick="updateAngleDirection()" id="cw" name="angle_dir" value="cw">
+    <label for="html">Clockwise Angle</label>
+    <input type="radio" onclick="updateAngleDirection()" id="ccw" name="angle_dir" value="ccw">
+    <label for="css">Counterclockwise Angle</label><br>
     <input id="vidloader" type="file" accept="video/*" />
     <div id="videocontainer">
         <video id="myVideo">
@@ -41,6 +45,18 @@
     </p>
     <p class="timefeedback" id="maxtime">
         0
+    </p>
+
+    <p id="angle1">
+        180
+    </p>
+
+    <p id="angle2">
+        180
+    </p>
+
+    <p id="angle">
+        180
     </p>
 
     <script src="video_tools.js"></script>
