@@ -1,12 +1,28 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
+.titlebar {
+    width: 100vw;
+    height: 5vh;
+    background-color: aqua;
+}
+
+footer {
+    width: 100vw;
+    height: 5vh;
+    background-color: aqua;
+}
+
+.appcontents {
+    display: flex;
+}
 
 #videocontainer {
     position: relative;
-    width: auto;
-    height: auto;
+    width: fit-content;
+    height: fit-content;
     padding: 10px;
     border: 2px solid black;
 }

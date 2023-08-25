@@ -96,8 +96,6 @@ function goniometerPointInit(evt){
         if (countercw == true) {
             angle = 360-angle;
         }
-        document.getElementById("angle1").innerHTML =  Math.round(angle1*10)/10;
-        document.getElementById("angle2").innerHTML =  Math.round(angle2*10)/10;
         document.getElementById("angle").innerHTML =  Math.round(angle*10)/10;
     }
 
