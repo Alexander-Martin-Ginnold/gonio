@@ -187,7 +187,7 @@ function addAngle() {
     timestamps[Math.round(vid.currentTime*10)] = (Math.round(vid.currentTime*10)/10);
     generateTable();
     console.log(angles);
-
+    
 }
 generateTable();
   
