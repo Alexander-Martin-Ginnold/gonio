@@ -33,36 +33,9 @@ function loadVideo(event) {
     updateTimestamp();
 }
 
-var vidInput = document.getElementById('vidloader');
-vidInput.addEventListener('change', loadVideo, false);
-
-document.addEventListener('keypress', (event) => {
-    var code = event.code;
-    if (code === 'KeyD') {
-        stepForward();
-        return;
-      }
-
-  }, false);
-
-  document.addEventListener('keypress', (event) => {
-    var code = event.code;
-    if (code === 'KeyA') {
-        stepBack()
-        return;
-      }
-
-  }, false);
-
 // Goniometer Functions
 // Functionality largely based on this article from Peter Collingridge
 // https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
-var countercw = false;
-function updateAngleDirection() {
-    var select = document.getElementById("ccw");
-    countercw = select.checked;
-    console.log(countercw)
-}
 
 var selectedElement = false;
 var offset;
@@ -167,10 +140,6 @@ function getMousePosition(evt) {
     };
     }  
 
-
-
-redrawLines();
-recalculateAngle();
 // Data logging
 let table = document.querySelector("table");
 let columnHead = ["Timestamp", "Angle (°)"];
@@ -207,6 +176,47 @@ function addAngle() {
     console.log(angles);
 
 }
+
+var countercw = false;
+function updateAngleDirection() {
+    var select = document.getElementById("ccw");
+    if (select.checked != countercw) {
+        console.log("switch")
+        if (countercw == false) {
+            angles = angles.map(n => 360-n);
+        } else {
+            angles = angles.map(n => 360-n);
+        }
+    }
+    countercw = select.checked;
+    console.log(countercw)
+}
+
+var vidInput = document.getElementById('vidloader');
+vidInput.addEventListener('change', loadVideo, false);
+
+document.addEventListener('keypress', (event) => {
+    var code = event.code;
+    if (code === 'KeyD') {
+        stepForward();
+        return;
+      }
+
+  }, false);
+
+  document.addEventListener('keypress', (event) => {
+    var code = event.code;
+    if (code === 'KeyA') {
+        stepBack()
+        return;
+      }
+
+  }, false);
+
+updateAngleDirection();
+redrawLines();
+recalculateAngle();
+
 generateTable();
 document.addEventListener('keypress', (event) => {
   var code = event.code;
