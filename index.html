@@ -5,7 +5,6 @@
     <title>Gonio</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="goniometer.js"></script>
 </head>
 
 <body>
@@ -18,7 +17,7 @@
                 <source src="" type="video/*">
                 Your browser does not support HTML5 video.
             </video>
-            <svg id="goniometer" xmlns="http://www.w3.org/2000/svg" onload="goniometerPointInit(evt)">
+            <svg id="goniometer" xmlns="http://www.w3.org/2000/svg">
                 <line id="initialline" x1="555" x2=" 405" y1="505" y2="505" stroke="orange" stroke-width="1" />
                 <line id="finalline" x1="405" x2="505" y1="505" y2="305" stroke="orange" stroke-width="1" />
                 <rect class="gonpoint" id="vertinitial" x="550" y="500" width="10" height="10" fill="#00000000"
@@ -51,6 +50,9 @@
             <p id="angle">
                 180
             </p>
+            <table id="anglelog">
+
+            </table>
         </div>
 
     </main>
@@ -58,6 +60,7 @@
 
     </footer>
     <script src="video_tools.js"></script>
+
 
 </body>
 
