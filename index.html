@@ -15,8 +15,8 @@
     <main class="appcontents">
         <div id="videocontainer">
             <video id="myVideo">
+                <source src="media/armmovementsample.webm" type="video/webm">
                 <source src="" type="video/*">
-                Your browser does not support HTML5 video.
             </video>
             <svg id="goniometer" xmlns="http://www.w3.org/2000/svg">
                 <line id="initialline" x1="555" x2=" 405" y1="505" y2="505" stroke="orange" stroke-width="1" />
@@ -32,8 +32,8 @@
         </div>
         <div id="vidcontrols">
             <div id="message"></div>
-            <button onclick="stepBack()" type="button">Step Back</button>
-            <button onclick="stepForward()" type="button">Step Forward</button><br>
+            <button onclick="stepBack()" type="button">Step Back (A Key)</button>
+            <button onclick="stepForward()" type="button">Step Forward (D Key)</button><br>
             <input type="radio" onclick="updateAngleDirection()" id="cw" name="angle_dir" value="cw" checked>
             <label for="html">Clockwise Angle</label>
             <input type="radio" onclick="updateAngleDirection()" id="ccw" name="angle_dir" value="ccw">
@@ -51,7 +51,7 @@
             <p id="angle">
                 180
             </p>
-            <button onclick="addAngle()" type="button">Log Data Point</button>
+            <button onclick="addAngle()" type="button">Log Data Point (S Key)</button>
             <button onclick="copyTable()" type="button">Copy Table Data</button>
             <table id="anglelog">
 
