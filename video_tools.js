@@ -36,6 +36,24 @@ function loadVideo(event) {
 var vidInput = document.getElementById('vidloader');
 vidInput.addEventListener('change', loadVideo, false);
 
+document.addEventListener('keypress', (event) => {
+    var code = event.code;
+    if (code === 'KeyD') {
+        stepForward();
+        return;
+      }
+
+  }, false);
+
+  document.addEventListener('keypress', (event) => {
+    var code = event.code;
+    if (code === 'KeyA') {
+        stepBack()
+        return;
+      }
+
+  }, false);
+
 // Goniometer Functions
 // Functionality largely based on this article from Peter Collingridge
 // https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
@@ -187,7 +205,15 @@ function addAngle() {
     timestamps[Math.round(vid.currentTime*10)] = (Math.round(vid.currentTime*10)/10);
     generateTable();
     console.log(angles);
-    
+
 }
 generateTable();
+document.addEventListener('keypress', (event) => {
+  var code = event.code;
+  if (code === 'KeyS') {
+      addAngle()
+      return;
+    }
+
+}, false);
   
