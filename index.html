@@ -9,7 +9,8 @@
 
 <body>
     <header class="titlebar">
-        <h1>Gonio</h1>
+        <h1 class="sitetitle">Gonio</h1>
+        <span class="gradientbar"></span>
     </header>
     <main class="appcontents">
         <div id="videocontainer">
@@ -37,7 +38,7 @@
             <label for="html">Clockwise Angle</label>
             <input type="radio" onclick="updateAngleDirection()" id="ccw" name="angle_dir" value="ccw">
             <label for="css">Counterclockwise Angle</label><br>
-            <input id="vidloader" type="file" accept="video/*" />
+            <input id="vidloader" type="file" accept="video/*" /><br>
             <p class="timefeedback" id="timestamp">
                 0
             </p>
@@ -51,6 +52,7 @@
                 180
             </p>
             <button onclick="addAngle()" type="button">Log Data Point</button>
+            <button onclick="copyTable()" type="button">Copy Table Data</button>
             <table id="anglelog">
 
             </table>

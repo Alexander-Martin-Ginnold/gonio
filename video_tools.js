@@ -173,7 +173,6 @@ function addAngle() {
     angles[Math.round(vid.currentTime*10)] = angle;
     timestamps[Math.round(vid.currentTime*10)] = (Math.round(vid.currentTime*10)/10);
     generateTable();
-    console.log(angles);
 
 }
 
@@ -212,6 +211,18 @@ document.addEventListener('keypress', (event) => {
       }
 
   }, false);
+
+function copyTable() {
+    // create a Range object
+    var range = document.createRange();  
+    // set the Node to select the "range"
+    range.selectNode(table);
+    // add the Range to the set of window selections
+    window.getSelection().addRange(range);
+    
+    // execute 'copy', can't 'cut' in this case
+    document.execCommand('copy');
+}
 
 updateAngleDirection();
 redrawLines();

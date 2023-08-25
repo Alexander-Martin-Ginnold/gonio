@@ -5,14 +5,46 @@
 
 .titlebar {
     width: 100vw;
-    height: 5vh;
-    background-color: aqua;
+    background-color: #0055a2;
+}
+
+.sitetitle {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: lowercase;
+    font-size: 24px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    height: 83px;
+}
+
+.gradientbar {
+    height: 10px;
+    background: linear-gradient(90deg, #1c88f4 0%, #e5a823 73%) 100% 0 no-repeat, #ededed;
+    background-size: 100% 10px, 100%;
+    display: block;
 }
 
 footer {
     width: 100vw;
     height: 5vh;
-    background-color: aqua;
+    background-color: #0055a2;
+}
+
+table,
+td {
+    border: thin solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+th {
+    border: thick solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    font-weight: bold;
 }
 
 .appcontents {
