@@ -1,69 +1,116 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Gonio</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="titlebar">
-        <h1 class="sitetitle">Gonio</h1>
-        <span class="gradientbar"></span>
+      <h1 class="sitetitle">Gonio</h1>
+      <!-- <span class="gradientbar"></span> -->
     </header>
     <main class="appcontents">
-        <div id="videocontainer">
-            <video id="myVideo">
-                <source src="media/armmovementsample.webm" type="video/webm">
-                <source src="" type="video/*">
-            </video>
-            <svg id="goniometer" xmlns="http://www.w3.org/2000/svg">
-                <line id="initialline" x1="555" x2=" 405" y1="505" y2="505" stroke="orange" stroke-width="1" />
-                <line id="finalline" x1="405" x2="505" y1="505" y2="305" stroke="orange" stroke-width="1" />
-                <rect class="gonpoint" id="vertinitial" x="550" y="500" width="10" height="10" fill="#00000000"
-                    stroke="orange" stroke-width="1" />
-                <rect class="gonpoint" id="pivot" x="400" y="500" width="10" height="10" fill="#00F00000"
-                    stroke="orange" stroke-width="1" />
-                <rect class="gonpoint" id="vertfinal" x="500" y="300" width="10" height="10" fill="#0000F000"
-                    stroke="orange" stroke-width="1" />
+      <div id="videocontainer">
+        <video controls id="myVideo">
+          <source src="media/armmovementsample.webm" type="video/webm" />
+          <source src="" type="video/*" />
+        </video>
+        <svg id="goniometer" xmlns="http://www.w3.org/2000/svg">
+          <line
+            id="baseline"
+            x1="80"
+            x2=" 180"
+            y1="30"
+            y2="30"
+            stroke="orange"
+            stroke-width="1"
+          />
+          <line
+            id="measureline"
+            x1="80"
+            x2="180"
+            y1="50"
+            y2="50"
+            stroke="orange"
+            stroke-width="1"
+          />
+          <rect
+            class="gonpoint"
+            id="basestart"
+            x="80"
+            y="30"
+            width="10"
+            height="10"
+            fill="#00000000"
+            stroke="orange"
+            stroke-width="1"
+          />
+          <rect
+            class="gonpoint"
+            id="baseend"
+            x="180"
+            y="30"
+            width="10"
+            height="10"
+            fill="#00000000"
+            stroke="blue"
+            stroke-width="1"
+          />
+          <rect
+            class="gonpoint"
+            id="measurestart"
+            x="80"
+            y="50"
+            width="10"
+            height="10"
+            fill="#00000000"
+            stroke="orange"
+            stroke-width="1"
+          />
+          <rect
+            class="gonpoint"
+            id="measureend"
+            x="180"
+            y="50"
+            width="10"
+            height="10"
+            fill="#00000000"
+            stroke="blue"
+            stroke-width="1"
+          />
+        </svg>
+      </div>
+      <div id="vidcontrols">
+        <div id="message"></div>
 
-            </svg>
-        </div>
-        <div id="vidcontrols">
-            <div id="message"></div>
-            <button onclick="stepBack()" type="button">Step Back (A Key)</button>
-            <button onclick="stepForward()" type="button">Step Forward (D Key)</button><br>
-            <input type="radio" onclick="updateAngleDirection()" id="cw" name="angle_dir" value="cw" checked>
-            <label for="html">Clockwise Angle</label>
-            <input type="radio" onclick="updateAngleDirection()" id="ccw" name="angle_dir" value="ccw">
-            <label for="css">Counterclockwise Angle</label><br>
-            <input id="vidloader" type="file" accept="video/*" /><br>
-            <p class="timefeedback" id="timestamp">
-                0
-            </p>
-            <p class="timefeedback">
-                /
-            </p>
-            <p class="timefeedback" id="maxtime">
-                0
-            </p>
-            <p id="angle">
-                180
-            </p>
-            <button onclick="addAngle()" type="button">Log Data Point (S Key)</button>
-            <button onclick="copyTable()" type="button">Copy Table Data</button>
-            <table id="anglelog">
-
-            </table>
-        </div>
-
+        <input id="vidloader" type="file" accept="video/*, image/*" /><br />
+        <p id="angle">180</p>
+        <input
+          type="radio"
+          onclick="updateAngleDirection()"
+          id="cw"
+          name="angle_dir"
+          value="cw"
+          checked
+        />
+        <label for="cw">Clockwise Angle</label>
+        <input
+          type="radio"
+          onclick="updateAngleDirection()"
+          id="ccw"
+          name="angle_dir"
+          value="ccw"
+        />
+        <label for="ccw">Counterclockwise Angle</label><br />
+        <button onclick="addAngle()" type="button">
+          Log Data Point (S Key)
+        </button>
+        <button onclick="copyTable()" type="button">Copy Table Data</button>
+        <table id="anglelog"></table>
+      </div>
     </main>
-    <footer>
-
-    </footer>
     <script src="video_tools.js"></script>
-
-</body>
-
+  </body>
 </html>
